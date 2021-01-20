@@ -6,4 +6,10 @@
     <RootNamespace>xadrez_console_</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="NovaPasta\**" />
+    <EmbeddedResource Remove="NovaPasta\**" />
+    <None Remove="NovaPasta\**" />
+  </ItemGroup>
+
 </Project>
