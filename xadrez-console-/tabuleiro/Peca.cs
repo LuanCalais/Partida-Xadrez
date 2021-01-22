@@ -7,9 +7,9 @@
         public int qteMovimentos { get; protected set; }
         public Tabuleiro tab { get; protected set; }//A peça está em um tabuleiro
 
-        public Peca(Posicao posicao, Tabuleiro tab, Cor cor)
+        public Peca(Tabuleiro tab, Cor cor)
         {
-            this.posicao = posicao;
+            this.posicao = null;//Quando uma peça é criada ela ainda não tem posição, é o tabuleiro o responsável por coloca-la
             this.tab = tab;
             this.cor = cor;
             this.qteMovimentos = 0; //A peça sempre inicia com 0 quando ela é criada

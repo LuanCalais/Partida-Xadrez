@@ -14,10 +14,17 @@
         }
 
 
-        public Peca peca(int linhas, int colunas)
+        public Peca peca(int linha, int coluna)//Método público que pode acessar uma peça //está no singular por cuasa da classe POSICAO
         {
-            return pecas[linhas, colunas];
-        } 
+            return pecas[linha, coluna];
+        }
+
+        public void colocarPeca(Peca p, Posicao pos)
+        {
+            pecas[pos.linha, pos.coluna] = p; //coloca a peça na matriz de peças 
+            p.posicao = pos; //Diz que a nova posição da peça é o valor de linha e coluna armazenados na Posicao pos
+        }
+
 
 
     }
