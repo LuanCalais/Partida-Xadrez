@@ -1,5 +1,6 @@
 ﻿using System;
 using tabuleiro;
+using xadrez;
 
 namespace xadrez_console_
 {
@@ -26,6 +27,15 @@ namespace xadrez_console_
                 Console.WriteLine(); //quebra de linha
             }
             Console.WriteLine("  a b c d e f g h");
+        }
+
+
+        public static PosicaoXadrez lerPosicaoXadrez()//Lê o que o usuário digitou no teclado 
+        {
+            string s = Console.ReadLine();//lê a entrada em um string 
+            char coluna = s[0];//pega a letra da posição desejada
+            int linha = int.Parse(s[1] + "");//pega o número referente a coluna, INT.PARSE CONVERTE
+            return new PosicaoXadrez(coluna, linha);
         }
 
 

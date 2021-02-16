@@ -11,13 +11,25 @@ namespace xadrez_console_
 
             try
             {
-                Tabuleiro tab = new Tabuleiro(8, 8);
+                PartidaDeXadrez partida = new PartidaDeXadrez();
 
-                tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
-                tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(1, 3));
-                tab.colocarPeca(new Rei(tab, Cor.Preta), new Posicao(0, 2));
+                while (!partida.terminada)//enquanto a partida não estiver terminada 
+                {
+                    Console.Clear();
+                    Tela.ImprimirTabuleiro(partida.tab);
 
-                Tela.ImprimirTabuleiro(tab);
+                    Console.WriteLine();
+                    Console.Write("Digite a origem: ");
+                    Posicao origem = Tela.lerPosicaoXadrez().toPosicao();//Pega essa posição e transforma em posição de matriz
+
+                    Console.Write("Digite o destino: ");
+                    Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
+
+                    partida.executaMovimento(origem, destino);
+                }
+
+
+                
             }
             catch(TabuleiroException e)
             {

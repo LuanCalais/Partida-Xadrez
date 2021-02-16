@@ -15,6 +15,10 @@
             this.qteMovimentos = 0; //A peça sempre inicia com 0 quando ela é criada
         }
 
+        public void incrementarQteMovimentos()
+        {
+            qteMovimentos++;
+        }
 
 
     }

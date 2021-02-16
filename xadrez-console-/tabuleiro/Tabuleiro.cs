@@ -14,7 +14,7 @@
         }
 
 
-        public Peca peca(int linha, int coluna)//Método público que pode acessar uma peça //está no singular por cuasa da classe POSICAO
+        public Peca peca(int linha, int coluna)//Método público que pode acessar uma peça 
         {
             return pecas[linha, coluna];
         }
@@ -38,6 +38,18 @@
             }
             pecas[pos.linha, pos.coluna] = p; //coloca a peça na matriz de peças 
             p.posicao = pos; //Diz que a nova posição da peça é o valor de linha e coluna armazenados na Posicao pos
+        }
+
+        public Peca retirarPeca(Posicao pos)//Ele retorna uma Peca pois pode ser necessário acessar essa peça de novo
+        {
+            if(peca(pos) == null)
+            {
+                return null;//Não teve peça a ser retirada do tabuleiro
+            }
+            Peca aux = peca(pos);
+            aux.posicao = null;//a peça não está mais em nenhuma posição do tabuleiro, ela foi retirada 
+            pecas[pos.linha, pos.coluna] = null;//Marcando a posição dela no tabuleiro como null, não tem mais peça lá 
+            return aux;//Retorna as informações da peça mas com a posição null
         }
 
         public bool posicaoValida(Posicao pos)//Metodo que testa se a posicao POS é válida 
