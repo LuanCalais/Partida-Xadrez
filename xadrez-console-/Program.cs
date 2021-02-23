@@ -22,6 +22,13 @@ namespace xadrez_console_
                     Console.Write("Digite a origem: ");
                     Posicao origem = Tela.lerPosicaoXadrez().toPosicao();//Pega essa posição e transforma em posição de matriz
 
+                    //Incremento para alterar a cor de fundo e mostrar as posições possíveis para o usuário
+                    bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
+
+
+                    Console.Clear();
+                    Tela.ImprimirTabuleiro(partida.tab, posicoesPossiveis);
+
                     Console.Write("Digite o destino: ");
                     Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
 

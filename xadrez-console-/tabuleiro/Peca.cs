@@ -1,6 +1,6 @@
 ﻿namespace tabuleiro
 {
-    class Peca
+    abstract class Peca
     {
         public Posicao posicao { get; set; }//Associação Entre Classes
         public Cor cor { get; protected set; }//PROTECT só pode ser alterada por ela ou pelas subclasses dela
@@ -19,6 +19,9 @@
         {
             qteMovimentos++;
         }
+
+        public abstract bool[,] movimentosPossiveis();//bool pois vai ser true onde o movimento for possível e false onde não for
+      
 
 
     }
