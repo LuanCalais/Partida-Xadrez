@@ -20,6 +20,27 @@
             qteMovimentos++;
         }
 
+        public bool existeMovimentosPossiveis()//Verifica se a peça não está bloqueada de movimentos 
+        {
+            bool[,] mat = movimentosPossiveis();
+            for(int i = 0; i < tab.linhas; i++)
+            {
+                for(int j = 0; j < tab.colunas; j++)
+                {
+                    if(mat[i,j])
+                    {
+                        return true;//se ela percorrer as matrizes e encontrar um movimento possível, retorna true
+                    }
+                }
+            }
+            return false;//se não encontrar nada verdadeiro na matriz, retorna false
+        }
+
+        public bool podeMoverPara(Posicao pos)//Diz se a peça pode mover para uma dada posição 
+        {
+            return movimentosPossiveis()[pos.linha, pos.coluna];//testa se nessa linha e coluna é true 
+        }
+
         public abstract bool[,] movimentosPossiveis();//bool pois vai ser true onde o movimento for possível e false onde não for
       
 
